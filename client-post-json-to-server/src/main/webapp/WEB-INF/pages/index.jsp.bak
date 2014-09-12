@@ -21,11 +21,11 @@
 			    contentType: 'application/json',
 			    mimeType: 'application/json',
 			    success: function(data) { 
-			    	$("#result").val("");
-			        $("#result").val(data.id + " " + data.name);
+			    	$("#result").html("");
+			        $("#result").append(data.id + " " + data.name);
 			    },
 			    error:function(data,status,er) {
-			    	$("#result").val("error: "+data+" status: "+status+" er:"+er);
+			    	$("#result").append("error: "+data+" status: "+status+" er:"+er);
 			        alert("error: "+data+" status: "+status+" er:"+er);
 			    }
 		});
@@ -33,23 +33,9 @@
 </script>
 </head>
 <body>
-<label>JSON single object</label>|<a href="${pageContext.servletContext.contextPath}/multiple">JSON Multiple org.codehaus.jackson</a><br/>
-<table>
-<tr>
-    <td>Product</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>name</td> 
-  </tr>
-  <tr>
-    <td><input type="text" id="id"></td>
-    <td><input type="text" id="name"></td> 
-  </tr>
-</table>
-<br/>
+	id:<input type="text" id="id"><br/>
+	name:<input type="text" id="name">
 	<input type="button" value="Send JSON" onclick="sendAjax()"> <br/>
-	<label>Result from server:</label><br/>
-	<textarea id="result" readonly=true"></textarea>
+	Result from server:<div id="result"></div>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class IndexController {
 	@RequestMapping(method=RequestMethod.GET)
 	String index(){
 		return "index";
-	}
+	};
 	
 	 @RequestMapping(value="/product", method = RequestMethod.POST ,
 			 produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -24,5 +24,5 @@ public class IndexController {
 	 public Product post( @RequestBody Product product) {    
 		 System.out.println(product.getId() + " " + product.getName());
 		 return product;
-	 }
+	};
 }

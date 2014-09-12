@@ -10,19 +10,20 @@
 <script type="text/javascript">
 	function sendAjax() {
 		$.ajax({
-			    url: "${pageContext.servletContext.contextPath}/index/product", 
+			    url: "${pageContext.servletContext.contextPath}/multiple/post", 
 			    type: 'POST',
 			    headers: { 
 			        'Accept': 'application/json',
 			        'Content-Type': 'application/json' 
 			    },
 			    dataType: 'json', 
-			    data: "{\"name\":\""+$("#name").val()+"\",\"id\":"+$("#id").val()+"}", 
+			    data: "{\"product\":{\"name\":\""+$("#product_name").val()+"\",\"id\":"+$("#product_id").val()+
+			    	"},\"user\":{\"name\":\""+$("#user_name").val()+"\",\"id\":"+$("#user_id").val()+",\"email\":\""+$("#user_email").val()+"\"}}", 
 			    contentType: 'application/json',
 			    mimeType: 'application/json',
 			    success: function(data) { 
-			    	$("#result").val("");
-			        $("#result").val(data.id + " " + data.name);
+			    	$("#result").html("");
+			    	 $("#result").val(data.id + " " + data.name+" "+data.email);
 			    },
 			    error:function(data,status,er) {
 			    	$("#result").val("error: "+data+" status: "+status+" er:"+er);
@@ -33,19 +34,34 @@
 </script>
 </head>
 <body>
-<label>JSON single object</label>|<a href="${pageContext.servletContext.contextPath}/multiple">JSON Multiple org.codehaus.jackson</a><br/>
+<a href="${pageContext.servletContext.contextPath}/index">JSON single object</a>|<lable>JSON Multiple object use org.codehaus.jackson</lable><br/>
 <table>
-<tr>
-    <td>Product</td>
-  </tr>
-  <tr>
-    <td>id</td>
-    <td>name</td> 
-  </tr>
-  <tr>
-    <td><input type="text" id="id"></td>
-    <td><input type="text" id="name"></td> 
-  </tr>
+	<tr>
+    	<td>Product</td>
+  	</tr>
+  	<tr>
+    	<td>id</td>
+    	<td>name</td> 
+  	</tr>
+  	<tr>
+    	<td><input type="text" id="product_id"></td>
+    	<td><input type="text" id="product_name"></td> 
+  	</tr>
+</table>
+<table>
+	<tr>
+    	<td>user</td>
+  	</tr>
+  	<tr>
+    	<td>id</td>
+    	<td>name</td> 
+    	<td>email</td> 
+  	</tr>
+  	<tr>
+    	<td><input type="text" id="user_id"></td>
+    	<td><input type="text" id="user_name"></td>
+    	<td><input type="text" id="user_email"></td>
+  	</tr>
 </table>
 <br/>
 	<input type="button" value="Send JSON" onclick="sendAjax()"> <br/>
