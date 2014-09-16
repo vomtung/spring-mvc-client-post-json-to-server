@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	function sendAjax() {
 		$.ajax({
-			    url: "${pageContext.servletContext.contextPath}/multiple/treenodebinding", 
+			    url: "${pageContext.servletContext.contextPath}/multiple/mapbinding", 
 			    type: 'POST',
 			    headers: { 
 			        'Accept': 'application/json',
@@ -34,8 +34,8 @@
 </script>
 </head>
 <body>
-<a href="${pageContext.servletContext.contextPath}/index">JSON single object</a>|<label>JSON Multiple org.codehaus.jackson( treenodebinding)</label><br/>
-<a href="${pageContext.servletContext.contextPath}/multiple/mapbinding">JSON Multiple org.codehaus.jackson( mapbinding)</a><br/>
+<a href="${pageContext.servletContext.contextPath}/index">JSON single object</a>|<a href="${pageContext.servletContext.contextPath}/multiple">JSON Multiple object use org.codehaus.jackson( treenodebinding)</a><br/>
+<label>JSON Multiple org.codehaus.jackson( map binding)</label><br/>
 <table>
 	<tr>
     	<td>Product</td>
