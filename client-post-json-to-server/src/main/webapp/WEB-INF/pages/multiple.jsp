@@ -34,7 +34,7 @@
 </script>
 </head>
 <body>
-<a href="${pageContext.servletContext.contextPath}/index">JSON single object</a>|<label>JSON Multiple org.codehaus.jackson( treenodebinding)</label><br/>
+<a href="${pageContext.servletContext.contextPath}">JSON single object</a>|<label>JSON Multiple org.codehaus.jackson( treenodebinding)</label><br/>
 <a href="${pageContext.servletContext.contextPath}/multiple/mapbinding">JSON Multiple org.codehaus.jackson( mapbinding)</a><br/>
 <table>
 	<tr>

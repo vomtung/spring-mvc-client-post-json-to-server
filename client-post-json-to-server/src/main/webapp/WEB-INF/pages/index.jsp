@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	function sendAjax() {
 		$.ajax({
-			    url: "${pageContext.servletContext.contextPath}/index/product", 
+			    url: "${pageContext.servletContext.contextPath}/product", 
 			    type: 'POST',
 			    headers: { 
 			        'Accept': 'application/json',

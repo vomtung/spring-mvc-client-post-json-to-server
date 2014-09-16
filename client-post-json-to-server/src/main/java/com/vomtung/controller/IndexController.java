@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.vomtung.entity.Product;
 
 @Controller
-@RequestMapping(value="/index")
+@RequestMapping(value="/")
 public class IndexController {
 	
 	@RequestMapping(method=RequestMethod.GET)
@@ -22,7 +22,6 @@ public class IndexController {
 			 produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
 	 @ResponseBody
 	 public Product post( @RequestBody Product product) {    
-		 System.out.println(product.getId() + " " + product.getName());
 		 return product;
 	};
 }
